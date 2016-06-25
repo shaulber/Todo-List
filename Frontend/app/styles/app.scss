@@ -1,0 +1,160 @@
+body{
+  margin-left:auto;
+  margin-right:auto;
+  width:320px;
+  height:480px;
+  background-color: #6DBDD6;
+
+}
+#todo-header{
+  height: 62px;
+  background-image: linear-gradient( #EBD490, #CE7811);
+
+}
+#todo-window{
+  width:320px;
+  height:480px;
+  background-color: #909186;
+}
+#header-table {
+  height: 20px;
+  direction: rtl;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+}
+#todo-main{
+  height: 390px;
+  max-heigh: 390px;
+  background-color: #E6E5E5;
+  margin-top: 5px;
+  padding: 1px;
+  overflow-y: scroll;
+  z-index: 2;
+  position: relative;
+}
+#footer {
+  height: 30px;
+  background-color: #FFFFFF;
+  direction: rtl;
+
+}
+
+#title{
+  margin-right: 5px;
+  text-align: right;
+  font-size: 24px;
+}
+
+#add-task-btn{
+  float: left;
+  margin-left: 10px;
+  height: 35px;
+  width: 35px;
+  border-radius: 6px;
+  background-image: linear-gradient( #FEFEFE, #A0A0A0);
+  text-align: left;
+  margin-top: -5px;
+}
+#task-list{
+  direction: rtl;
+  float: right;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+#task-list li {
+  position: relative;
+  direction: rtl;
+  font-size: 20px;
+  border-bottom: 1px dotted #ccc;
+}
+
+#task-list li:last-child {
+  border-bottom: none;
+}
+#task-list li:nth-child(odd){
+  background-color: #F4F6E4;
+}
+#task-list li:nth-child(even){
+  background-color: #FFFFFF;
+}
+
+#task-list li .toggle {
+  text-align: center;
+  width: 20px;
+  margin: 5px;
+  height: 30px;
+  position: absolute;
+  border-radius: 8px;
+  top: 0;
+  bottom: 0;
+  float: right;
+
+}
+
+#task-list li .task-field {
+  word-wrap: break-word;
+  padding: 10px;
+  font-size:20px;
+  margin-right: 25px;
+  display: block;
+  background-color: Transparent;
+  border: none;
+  color: #000;
+
+}
+#task-list li.completed .task-field {
+  color: #B7B8AB;
+  text-decoration: line-through;
+}
+
+#task-list li .destroy {
+  float: left;
+  position: absolute;
+  top: 0;
+  left: 10px;
+  bottom: 0;
+  width: 20px;
+  height: 20px;
+  margin: auto 0;
+  font-size: 22px;
+  color:#BDBDBD;
+  background-color: Transparent;
+  border: none;
+}
+#task-list li .destroy:hover {
+  color: #ff0000;
+}
+
+#task-list li.editing:last-child {
+  margin-bottom: -1px;
+}
+
+#circle{
+  border-radius: 100%;
+  border-style: solid;
+  height: 25px;
+  width: 25px;
+  margin: -5px;
+  border-width: 1px;
+  text-align: center;
+  font-weight: bold;
+  font-size: 25px;
+}
+#footer-table{
+  width: 100%;
+  color: #8C8C8C;
+}
+#footer-table .remain {
+    text-align: right;
+}
+#footer-table .task-completed {
+  text-align: center;
+}
+
+#footer-table .total {
+    text-align: left;
+}
+

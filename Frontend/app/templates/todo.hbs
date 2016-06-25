@@ -1,0 +1,49 @@
+<div id="todo-window">
+    <div id="todo-header">
+        <table id="header-table">
+            <tr>
+                <td>
+                    <p id="title">משימות</p>
+                </td>
+                <td>
+                    <button id="add-task-btn" {{action "addTask"}}>
+                        <div id="circle"><strong>+</strong></div>
+                    </button>
+                </td>
+            </tr>
+        </table>
+
+    </div>
+    <div id="todo-main">
+        <ul id="task-list">
+          {{#each model as |tasks| }}
+              <li class="{{if tasks.status 'completed' ''}}">
+                    {{input type="checkbox" checked=tasks.status class="toggle" change=(action "complete" tasks)}}
+                    {{input class="task-field" disabled=isDisable value=tasks.task
+                      doubleClick=(action "editTask") focus-out=(action "acceptChanges" tasks)  insert-newline=(action "acceptChanges" tasks)}}
+                    <button class="destroy" {{action "deleteTask" tasks.id}}>x</button>
+              </li>
+
+          {{/each}}
+        </ul>
+    </div>
+    <footer id="footer">
+        <table id="footer-table">
+            <tr>
+                <td class="remain">
+                    <label>לסיום: </label>
+                    <label>{{remaining.length}}</label>
+                </td>
+                <td class="task-completed">
+                    <label>הושלמו:</label>
+                    <label>{{completed.length}}</label>
+                </td>
+                <td class="total">
+                    <label> סה"כ:</label>
+                    <label>{{model.length}}</label>
+                </td>
+            </tr>
+        </table>
+    </footer>
+</div>
+{{outlet}}
